@@ -197,7 +197,7 @@ def page(request, num_entries, entry_list):
         if end > len(entry_list):
             end = len(entry_list)
 
-        maxpages = ((len(entry_list) - 1) / max) + 1 + count_from
+        maxpages = int((len(entry_list) - 1) / max) + 1 + count_from
 
         url = http.get("REQUEST_URI", http.get("HTTP_REQUEST_URI", ""))
         if url.find("?") != -1:
